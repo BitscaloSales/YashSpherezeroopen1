@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitscalo - Smarter Contact Centers. Simpler Operations.</title>
+    <meta name="description" content="Professional contact center solutions with Amazon Connect and Microsoft Dynamics 365. Transform your customer service operations.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f2937',
+                        secondary: '#6b7280',
+                        accent: '#8b5cf6',
+                        muted: '#f1f5f9'
+                    },
+                    fontFamily: {
+                        'heading': ['Montserrat', 'sans-serif'],
+                        'body': ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 900; }
+        .hero-gradient { background: linear-gradient(135deg, #1f2937 0%, #374151 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="/placeholder.svg?height=40&width=120" alt="Bitscalo Logo" class="h-10">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-accent px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#solutions" class="text-gray-700 hover:text-accent px-3 py-2 text-sm font-medium">Solutions</a>
+                        <a href="#services" class="text-gray-700 hover:text-accent px-3 py-2 text-sm font-medium">Services</a>
+                        <a href="#pricing" class="text-gray-700 hover:text-accent px-3 py-2 text-sm font-medium">Pricing</a>
+                        <a href="contact.html" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-700 transition">Book a Demo</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-accent">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+                <a href="#home" class="text-gray-700 hover:text-accent block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#solutions" class="text-gray-700 hover:text-accent block px-3 py-2 text-base font-medium">Solutions</a>
+                <a href="#services" class="text-gray-700 hover:text-accent block px-3 py-2 text-base font-medium">Services</a>
+                <a href="#pricing" class="text-gray-700 hover:text-accent block px-3 py-2 text-base font-medium">Pricing</a>
+                <a href="contact.html" class="bg-primary text-white block px-3 py-2 text-base font-medium rounded-lg mx-3 text-center">Book a Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-heading font-black mb-6">
+                    Smarter Contact Centers.<br>
+                    <span class="text-accent">Simpler Operations.</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
+                    We help design, implement and optimize Amazon Connect and Microsoft Dynamics 365 Contact Center solutions. From discovery to deployment.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-accent text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-purple-700 transition">
+                        Book a Demo
+                    </a>
+                    <a href="#assessment" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-primary transition">
+                        Free Assessment
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="py-16 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-primary mb-4">
+                    Proven Results for Your Business
+                </h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-accent mb-2">40%</div>
+                    <div class="text-gray-600 font-medium">Faster Resolution</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-accent mb-2">25%</div>
+                    <div class="text-gray-600 font-medium">Higher CSAT</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-accent mb-2">30%</div>
+                    <div class="text-gray-600 font-medium">Lower Costs</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl md:text-5xl font-black text-accent mb-2">50%</div>
+                    <div class="text-gray-600 font-medium">Better Productivity</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-primary mb-4">
+                    Our Solutions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Choose from our comprehensive contact center solutions designed to transform your customer service operations.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Amazon Connect -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Amazon Connect" class="h-15 w-15 mr-4">
+                        <h3 class="text-2xl font-heading font-black text-primary">Amazon Connect</h3>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Flexible scalability and architecture</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Connect Live AI for real-time insights</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Pay-per-use pricing model</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Native AWS service integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Advanced omnichannel routing</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Microsoft Dynamics 365 -->
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="/placeholder.svg?height=60&width=60" alt="Microsoft Dynamics 365" class="h-15 w-15 mr-4">
+                        <h3 class="text-2xl font-heading font-black text-primary">Microsoft Dynamics 365</h3>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Deep Microsoft 365 integration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Copilot AI assistance for agents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Unified case management</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Power Platform automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-accent mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Teams native experience</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-primary mb-4">
+                    Our Process
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We follow a proven 4-step methodology to ensure successful implementation and optimization.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-heading font-black text-primary mb-2">Discover</h3>
+                    <p class="text-gray-600">Analyze your current setup and identify optimization opportunities</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-heading font-black text-primary mb-2">Design</h3>
+                    <p class="text-gray-600">Create a tailored solution architecture for your business needs</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-heading font-black text-primary mb-2">Implement</h3>
+                    <p class="text-gray-600">Deploy and configure your contact center solution</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-accent text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-black mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-heading font-black text-primary mb-2">Optimize</h3>
+                    <p class="text-gray-600">Continuously improve performance and user experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-primary mb-4">
+                    Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professional contact center solutions starting from $2500. Get a custom quote based on your specific needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <h3 class="text-2xl font-heading font-black text-primary mb-4">Starter</h3>
+                    <div class="text-4xl font-black text-accent mb-2">$2,500</div>
+                    <div class="text-gray-600 mb-6">Basic implementation</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Basic setup & configuration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Up to 10 agents</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Email support</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition text-center block">
+                        Get Started
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover border-2 border-accent relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    <h3 class="text-2xl font-heading font-black text-primary mb-4">Professional</h3>
+                    <div class="text-4xl font-black text-accent mb-2">$7,500</div>
+                    <div class="text-gray-600 mb-6">Complete solution</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Full implementation & optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Up to 50 agents</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Custom integrations</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition text-center block">
+                        Get Started
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-8 card-hover">
+                    <h3 class="text-2xl font-heading font-black text-primary mb-4">Enterprise</h3>
+                    <div class="text-4xl font-black text-accent mb-2">Custom</div>
+                    <div class="text-gray-600 mb-6">Tailored solution</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Unlimited agents</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>24/7 dedicated support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="h-5 w-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Custom development</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition text-center block">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Assessment CTA -->
+    <section id="assessment" class="py-20 bg-accent text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-black mb-4">
+                Get Your Free Contact Center Assessment
+            </h2>
+            <p class="text-xl mb-8 text-purple-100">
+                Discover optimization opportunities and potential cost savings with our comprehensive assessment.
+            </p>
+            <a href="contact.html" class="bg-white text-accent px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
+                Start Free Assessment
+            </a>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="py-16 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-black text-primary mb-4">
+                    Seamless Integrations
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Connect with your existing tools and platforms
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center opacity-60">
+                <img src="/placeholder.svg?height=60&width=120" alt="Salesforce" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="HubSpot" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="Zendesk" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="Freshdesk" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="ServiceNow" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="Microsoft 365" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="Power Platform" class="h-12 mx-auto">
+                <img src="/placeholder.svg?height=60&width=120" alt="Teams" class="h-12 mx-auto">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/placeholder.svg?height=40&width=120" alt="Bitscalo Logo" class="h-10 mb-4">
+                    <p class="text-gray-300 mb-4">
+                        Professional contact center solutions that transform your customer service operations.
+                    </p>
+                    <div class="text-gray-300">
+                        <p class="mb-2">📧 Bitscalo_Sales@outlook.com</p>
+                        <p class="mb-2">📞 +91-9306410903</p>
+                        <p>📍 New Delhi, India</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-heading font-black mb-4">Solutions</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#solutions" class="hover:text-white transition">Amazon Connect</a></li>
+                        <li><a href="#solutions" class="hover:text-white transition">Microsoft Dynamics 365</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Custom Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-heading font-black mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition">Implementation</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Optimization</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Support</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Training</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-heading font-black mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="contact.html" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">Pricing</a></li>
+                        <li><a href="contact.html" class="hover:text-white transition">Free Assessment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Bitscalo. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
